@@ -1,73 +1,135 @@
-# Welcome to your Lovable project
 
-## Project info
+# PicXpert - Photography Booking Platform
 
-**URL**: https://lovable.dev/projects/06666cbb-b473-48a7-a636-2228fa9ce7fe
+PicXpert is a MERN (MongoDB, Express, React, Node.js) stack application that connects photographers with clients looking to book photography services. The platform features role-based access, real-time chat, portfolio management, and a booking system.
 
-## How can I edit this code?
+## Project Structure
 
-There are several ways of editing your application.
+The project is organized into two main directories:
 
-**Use Lovable**
+- **frontend/** - React.js client application
+- **backend/** - Node.js + Express server with MongoDB
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/06666cbb-b473-48a7-a636-2228fa9ce7fe) and start prompting.
+## Features
 
-Changes made via Lovable will be committed automatically to this repo.
+### Authentication
+- User registration with role selection (User/Photographer)
+- JWT-based authentication
+- Protected routes based on user roles
 
-**Use your preferred IDE**
+### User Features
+- Search and filter photographers by event type, price, location, etc.
+- View photographer profiles and portfolios
+- Book photography sessions
+- Real-time chat with photographers
+- Manage bookings and leave reviews
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Photographer Features
+- Create and manage professional profile
+- Set availability and pricing
+- Upload and showcase portfolio
+- Manage booking requests
+- Chat with clients
+- View earnings and booking statistics
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Tech Stack
 
-Follow these steps:
+### Frontend
+- React.js
+- TypeScript
+- Tailwind CSS
+- React Router DOM
+- React Hook Form + Zod
+- Context API for state management
+- Axios for API requests
+- Socket.io for real-time chat
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Backend
+- Node.js + Express
+- MongoDB with Mongoose ODM
+- JWT for authentication
+- Socket.io for real-time communication
+- Multer + Cloudinary for file uploads
+- bcrypt for password hashing
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## Getting Started
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Prerequisites
+- Node.js
+- MongoDB
+- NPM or Yarn
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/picxpert.git
+cd picxpert
+```
+
+2. Install dependencies for frontend:
+```bash
+cd frontend
+npm install
+```
+
+3. Install dependencies for backend:
+```bash
+cd ../backend
+npm install
+```
+
+4. Configure environment variables:
+   - Copy `.env.example` to `.env` in both frontend and backend directories
+   - Fill in your MongoDB connection string, JWT secret, and other required variables
+
+### Running the Application
+
+1. Start the backend server:
+```bash
+cd backend
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+2. Start the frontend development server:
+```bash
+cd frontend
+npm run dev
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+3. Open your browser and navigate to http://localhost:8080
 
-**Use GitHub Codespaces**
+## API Endpoints
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Authentication
+- `POST /api/auth/register` - Register a new user
+- `POST /api/auth/login` - Login
+- `GET /api/auth/me` - Get current user
 
-## What technologies are used for this project?
+### Photographers
+- `GET /api/photographers` - Get all photographers
+- `GET /api/photographers/:id` - Get photographer details
+- `POST /api/photographers` - Create photographer profile
+- `PUT /api/photographers` - Update photographer profile
+- `POST /api/photographers/portfolio` - Add portfolio item
 
-This project is built with:
+### Bookings
+- `GET /api/bookings` - Get user bookings
+- `POST /api/bookings` - Create a booking
+- `PUT /api/bookings/:id` - Update booking status
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Messages
+- `GET /api/messages/:userId` - Get conversation
+- `POST /api/messages` - Send a message
 
-## How can I deploy this project?
+## Deployment
 
-Simply open [Lovable](https://lovable.dev/projects/06666cbb-b473-48a7-a636-2228fa9ce7fe) and click on Share -> Publish.
+### Frontend
+The frontend can be deployed to Vercel or any other static hosting provider.
 
-## Can I connect a custom domain to my Lovable project?
+### Backend
+The backend can be deployed to Render, Heroku, or any other Node.js hosting service.
 
-Yes, you can!
+## License
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This project is licensed under the MIT License - see the LICENSE file for details.

@@ -52,6 +52,14 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				picxpert: {
+					DEFAULT: '#1A1F2C',  // Dark blue/purple
+					light: '#F1F0FB',    // Light background
+					primary: '#9b87f5',  // Primary purple
+					secondary: '#7E69AB', // Secondary purple
+					accent: '#D6BCFA',   // Light purple
+					gray: '#8E9196',     // Neutral gray
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
